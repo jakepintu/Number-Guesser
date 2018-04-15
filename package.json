@@ -1,0 +1,31 @@
+{
+  "name": "number-guesser",
+  "version": "1.0.0",
+  "description": "Number Guesser",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp live"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://jakepintu.github.io/Number Guesser/"
+  },
+  "keywords": [
+    "Html",
+    "Css",
+    "Responsive",
+    "CSS",
+    "Bootstrap",
+    "Number Guesser"
+  ],
+  "author": "Mahendra Choudhary",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1"
+  }
+}
