@@ -6,23 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Number Guesser</title>
-
     <!-- Bootstrap core CSS-->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    
+<body class="bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card card-body text-center mt-5">
+                    <h1 class="heading display-5 pb-3">Number Guessser</h1>
+                    <div id="game">
+                        <p class="lead">Guess a number betweeen <span class="min-num">1</span> and <span class="max-num">10</span></p>
+                        <input type="number" class="form-control" id="guess-input" placeholder="Enter your guess...">
+                        <input type="button" value="Submit" class="btn btn-outline-secondary btn-block mt-3" id="guess-value">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <!-- Custom JavaScript for this theme -->
     <script src="js/script.js"></script>
 </body>
