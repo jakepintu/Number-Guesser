@@ -64,7 +64,34 @@ guessBtn.addEventListener('click', function() {
     }
 })
 
+
+// Game over
+function gameOver(won, msg) {
+	let color;
+	won === true ? color = '#bde2bd' : color = '#d9534f';
+    // Disable input and button
+    guessInput.disabled = true;
+    // Change background color
+    guessInput.style.borderColor = color;
+    guessInput.style.backgroundColor = color;
+    // Change text Color
+    message.style.color = color;
+    // Set message
+    setMessage(msg);
+
+    // Play Again?
+    guessBtn.value = 'Play Again';
+    guessBtn.id = 'play-again';
+}
+
 // Get Winning Number
 function getRandomNum(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+// Set message
+function setMessage(msg, color) {
+    message.className = 'pt-3 lead';
+    message.style.color = color;
+    message.textContent = msg;
 }
