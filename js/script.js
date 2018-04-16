@@ -9,15 +9,62 @@ GAME FUNCTION
 
 // Game values
 let min = 1,
-	max = 10,
-	winningNumber = 2,
-	guessesLeft = 3;
+    max = 10,
+    winningNumber = getRandomNum(min, max),
+    guessesLeft = 3;
 
 // UI Elements
 const game = document.querySelector('#game'),
-	minNum = document.querySelector('.min-num'),
-	maxNum = document.querySelector('.max-num'),
-	guessBtn = document.querySelector('#guess-btn'),
-	guessInput = document.querySelector('#guess-input'),
-	message = document.querySelector('.message');
+    minNum = document.querySelector('.min-num'),
+    maxNum = document.querySelector('.max-num'),
+    guessBtn = document.querySelector('#guess-btn'),
+    guessInput = document.querySelector('#guess-input'),
+    message = document.querySelector('.message');
 
+// Assign UI min and max
+minNum.textContent = min;
+maxNum.textContent = max;
+
+// Play again event listener
+game.addEventListener('mousedown', function(e) {
+	if(e.target.id == 'play-again') {
+		window.location.reload();
+	}
+});
+
+// Listen for guess
+guessBtn.addEventListener('click', function() {
+    let guess = parseInt(guessInput.value);
+
+    // Validate
+    if (isNaN(guess) || guess < min || guess > max) {
+        setMessage(`Please enter a number between ${min} and ${max}`, '#d9534f');
+    }
+
+    // Check if wom
+    else if (guess === winningNumber) {
+        // Game over - wom
+         gameOver(true, `${guess} is correct, YOU WIN!`);
+    } else {
+        // Wrong number
+        guessesLeft -= 1;
+
+        if (guessesLeft === 0) {
+            // Game over - lost
+            gameOver(false, `Game Over, you lost. The correct number was ${winningNumber}`);
+        } else {
+            // Game continues - answer wrong
+            // Change background color
+            guessInput.style.borderColor = '#d9534f';
+            // Clear input
+            guessInput.value = '';
+            // Set message
+            setMessage(`${guess} is not correct, ${guessesLeft} guesses left`, '#d9534f');
+        }
+    }
+})
+
+// Get Winning Number
+function getRandomNum(min, max) {
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
