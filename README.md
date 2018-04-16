@@ -16,7 +16,7 @@ Guess My Number is a quick, fun, and easy opening game to lead with a small grou
 
 ## Preview
 
-[![Number Guesser Preview](https://raw.githubusercontent.com/jakepintu/Number-Guesser/master/Loan-Calculator.png)](https://jakepintu.github.io/Number-Guesser/)
+[![Number Guesser Preview](https://raw.githubusercontent.com/jakepintu/Number-Guesser/master/Number-Guesser.png)](https://jakepintu.github.io/Number-Guesser/)
 
 **[View Live Preview](https://jakepintu.github.io/Number-Guesser/)**
 
